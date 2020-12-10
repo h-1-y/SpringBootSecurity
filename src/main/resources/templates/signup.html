@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 페이지</title>
+</head>
+<body>
+    <h1>회원 가입</h1>
+    <hr>
+
+    <form th:action="@{/user/signup}" method="post">
+        <input type="text" name="email" placeholder="이메일 입력해주세요">
+        <input type="password" name="password" placeholder="비밀번호">
+        <button type="submit">가입하기</button>
+    </form>
+
+    <!-- th:action="@{/user/signup}" = 로그인 페이지와 달리 input hidden 타입으로 csrf 토큰 값을 넘겨주지 않고 
+         th:action을 사용하면 Thymeleaf가 csrf 토큰 값을 자동으로 추가해주므로 편리!! -->
+
+</body>
+</html>

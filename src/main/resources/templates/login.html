@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+</head>
+<body>
+    <h1>로그인</h1>
+    <hr>
+
+    <form action="/user/login" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+        <input type="text" name="username" placeholder="이메일 입력해주세요">
+        <input type="password" name="password" placeholder="비밀번호">
+        <button type="submit">로그인</button>
+    </form>
+    <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> -->
+    <!-- form에 히든 타입으로 csrf 토큰 값을 넘겨줌
+        Spring Security가 적용되면 POST 방식으로 보내는 모든 데이터는 csrf 토큰 값이 필요
+        토큰 값이 없는 상태에서 form 전송을 할 경우, 컨트롤러에 POST 메서드를 매핑할 수 없다는 에러가 발생
+        error : HttpRequestMethodNotSupportedException: Request method 'POST' -->
+
+    <!-- <input type="text" name="username" placeholder="이메일 입력해주세요"> -->
+    <!-- 로그인 시 아이디의 name 애트리뷰트 값은 username -->
+</body>
+</html>
