@@ -1,0 +1,25 @@
+server:
+  port: 9191
+
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/bootsecurity?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&autoReconnection=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: create
+        properties:
+          hibernate:
+            '[format_sql]': true 
+            # 이렇게 해주니까 format_sql 경고줄 사라지고 잘 처리됨... 이유는 모르겠음
+#        show_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+        type: trace
