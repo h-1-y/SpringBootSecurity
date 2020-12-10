@@ -60,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // 로그인 처리를 하기 위한 AuthenticationManagerBuilder 설정!!@
         auth.userDetailsService(memberService).passwordEncoder(passwordEncoder());
-        // dddddd
+        // dddddddd
     }
 
     
